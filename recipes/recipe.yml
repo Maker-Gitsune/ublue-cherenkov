@@ -52,15 +52,15 @@ modules:
     configurations:
       - scope: user
       - notify: false # Send notification after install/uninstall is finished (true/false)
-      install:
-        - app.zen_browser.zen
-        - com.github.tchx84.Flatseal
-        - io.missioncenter.MissionCenter
-        - org.libreoffice.LibreOffice
-        - org.flameshot.Flameshot
-        - org.gnome.Loupe
-      remove:
-        - org.gnome.eog
+        install:
+          - app.zen_browser.zen
+          - com.github.tchx84.Flatseal
+          - io.missioncenter.MissionCenter
+          - org.libreoffice.LibreOffice
+          - org.flameshot.Flameshot
+          - org.gnome.Loupe
+        remove:
+          - org.gnome.eog
 
   - type: fonts
     fonts:
