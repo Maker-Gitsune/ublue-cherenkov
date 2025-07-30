@@ -45,6 +45,8 @@ modules:
         - foot
         - gammastep
         - swaybg
+        - swaylock
+        - swayidle
         - htop
         - cmatrix # because it looks cool
         - kanshi
