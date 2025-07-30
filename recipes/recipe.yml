@@ -72,5 +72,9 @@ modules:
         - JetBrainsMono
         - Iosevka
 
+  - type: script
+    snippets:
+      - "systemctl set-default graphical.target"
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
