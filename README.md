@@ -1,6 +1,6 @@
-# WARNING
+# WARNING: THIS IS UNTESTED/INCOMPLETE
 
-If you are seeing this, the state of this image is untested or incomplete - usage is not advised.
+If you are seeing this, the image corresponding to this repo is not usable in the slightest.
 
 ## ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 
