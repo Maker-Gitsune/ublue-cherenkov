@@ -44,7 +44,10 @@ modules:
       - foot
       - gammastep
       - swaybg
-        
+      - htop
+      - cmatrix # because it looks cool
+      - kanshi
+      
   - type: default-flatpaks
     configurations:
       - scope: user
@@ -54,6 +57,7 @@ modules:
         - com.github.tchx84.Flatseal
         - io.missioncenter.MissionCenter
         - org.libreoffice.LibreOffice
+        - org.flameshot.Flameshot
         - org.gnome.Loupe
       remove:
         - org.gnome.eog
