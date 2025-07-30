@@ -1,4 +1,8 @@
-# ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
+# WARNING
+
+If you are seeing this, the state of this image is untested or incomplete - usage is not advised.
+
+## ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
