@@ -1,5 +1,5 @@
 ---
-yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: ublue-cherenkov
 # description will be included in the image's metadata
@@ -35,21 +35,22 @@ modules:
 
   - type: dnf
     install:
-      - fuzzel
-      - waybar
-      - Thunar
-      - thunar-volman
-      - sddm
-      - sddm-wayland-sway
-      - foot
-      - gammastep
-      - swaybg
-      - htop
-      - cmatrix # because it looks cool
-      - kanshi
-      - clipman
-      - tumbler
-      - gvfs-mtp
+      packages:
+        - fuzzel
+        - waybar
+        - Thunar
+        - thunar-volman
+        - sddm
+        - sddm-wayland-sway
+        - foot
+        - gammastep
+        - swaybg
+        - htop
+        - cmatrix # because it looks cool
+        - kanshi
+        - clipman
+        - tumbler
+        - gvfs-mtp
       
   - type: default-flatpaks
     configurations:
