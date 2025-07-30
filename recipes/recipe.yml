@@ -47,6 +47,9 @@ modules:
       - htop
       - cmatrix # because it looks cool
       - kanshi
+      - clipman
+      - tumbler
+      - gvfs-mtp
       
   - type: default-flatpaks
     configurations:
