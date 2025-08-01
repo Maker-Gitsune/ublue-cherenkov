@@ -38,8 +38,6 @@ modules:
       packages:
         - fuzzel
         - waybar
-        - Thunar
-        - thunar-volman
         - sddm
         - sddm-wayland-sway
         - foot
@@ -47,13 +45,19 @@ modules:
         - swaybg
         - swaylock
         - swayidle
-        - htop
-        - cmatrix # because it looks cool
         - kanshi
         - clipman
+        # cli things
+        - fastfetch
+        - htop
+        - cmatrix # because it looks cool
+        # file manager stuff
         - tumbler
         - gvfs-mtp
-        - fastfetch
+        - gvfs
+        - ffmpegthumbnailer
+        - Thunar
+        - thunar-volman
       
   - type: default-flatpaks
     configurations:
