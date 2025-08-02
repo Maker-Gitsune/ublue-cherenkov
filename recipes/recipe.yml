@@ -49,7 +49,6 @@ modules:
         - clipman
         # cli things
         - fastfetch
-        - htop
         - cmatrix # because it looks cool
         # file manager stuff
         - tumbler
