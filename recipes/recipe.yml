@@ -69,7 +69,10 @@ modules:
         install:
           - app.zen_browser.zen
           - com.github.tchx84.Flatseal
+          - io.github.flattool.Warehouse
+          # default-ish apps
           - io.missioncenter.MissionCenter
+          - io.mpv.Mpv
           - org.libreoffice.LibreOffice
           - org.flameshot.Flameshot
           - net.blumia.pineapple-pictures
