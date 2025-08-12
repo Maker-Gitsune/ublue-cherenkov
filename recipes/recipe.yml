@@ -52,6 +52,7 @@ modules:
         - kanshi
         - clipman
         - kde-partitionmanager
+        - wlogout
         # cli things
         - fastfetch
         - cmatrix # because it looks cool
@@ -61,6 +62,16 @@ modules:
         - gvfs
         - Thunar
         - thunar-volman
+        # for bzmenu/iwmenu
+        - rust
+        - cargo
+        - dbus
+        - bluez
+        - iwd
+        - pkgconfig
+        
+        
+        
       
   - type: default-flatpaks
     configurations:
@@ -87,7 +98,7 @@ modules:
       nerd-fonts:
         - JetBrainsMono
         - Iosevka
-
+  
   - type: script
     snippets:
       - "systemctl set-default graphical.target"
