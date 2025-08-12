@@ -68,7 +68,8 @@ modules:
         - dbus
         - bluez
         - iwd
-        - pkgconfig
+        - pkgconf
+        
         
         
         
