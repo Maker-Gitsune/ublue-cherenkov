@@ -40,12 +40,14 @@ modules:
   - type: dnf
     install:
       packages:
+        # interface stuff
         - fuzzel
         - waybar
         - sddm
         - sddm-wayland-sway
         - foot
         - gammastep
+        - brightnessctl
         - swaybg
         - swaylock
         - swayidle
@@ -54,15 +56,21 @@ modules:
         - clipman
         - kde-partitionmanager
         - wlogout
+        - rofimoji
+        # audio stuff
+        - pipewire
+        - wireplumber
         # cli things
         - fastfetch
         - cmatrix # because it looks cool
         # file manager stuff
         - tumbler
         - gvfs-mtp
+        - gvfs-nfs
         - gvfs
         - Thunar
         - thunar-volman
+        - thunar-archive-plugin
         # for bzmenu/iwmenu
         - rust
         - cargo
@@ -99,7 +107,18 @@ modules:
         - JetBrainsMono
         - Iosevka
   
-  - type: script
+  - type: script # install bzmenu, iwmenu
+    snippets:
+      - "git clone https://github.com/e-tho/iwmenu /tmp/iwmenu"
+      #- "git clone https://github.com/e-tho/bzmenu /tmp/bzmenu"
+      - "cd /tmp/iwmenu"
+      - "cargo build --release"
+      - "cp target/release/iwmenu /usr/local/bin"
+      #- "cd /tmp/bzmenu"
+      #- "cargo build --release"
+      #- "cp target/release/bzmenu /usr/local/bin"
+
+  - type: script 
     snippets:
       - "systemctl set-default graphical.target"
       - "systemctl enable sddm.service"
