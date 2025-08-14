@@ -119,7 +119,7 @@ modules:
       #- "cp target/release/bzmenu /usr/local/bin"
       # cleanup
       - "cd .."
-      - "rm -r iwmenu
+      - "rm -r iwmenu"
 
   - type: script 
     snippets:
