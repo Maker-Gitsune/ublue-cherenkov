@@ -61,6 +61,9 @@ modules:
         # audio stuff
         - pipewire
         - wireplumber
+        # wireless stuff
+        - NetworkManager
+        - blueman
         # cli things
         - fastfetch
         - cmatrix # because it looks cool
@@ -72,13 +75,13 @@ modules:
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
-        # for bzmenu/iwmenu
-        - rust
-        - cargo
-        - dbus
-        - bluez
-        - iwd
-        - pkgconf              
+        # for building bzmenu/iwmenu
+        #- rust
+        #- cargo
+        #- dbus
+        #- bluez
+        #- iwd
+        #- pkgconf              
       
   - type: default-flatpaks
     configurations:
@@ -108,15 +111,15 @@ modules:
         - JetBrainsMono
         - Iosevka
   
-  - type: script # install bzmenu, iwmenu
-    snippets:
-      #- "git clone https://github.com/e-tho/bzmenu /tmp/bzmenu"
-      - "mkdir -p ~/.scripts"
-      - "git clone https://github.com/e-tho/iwmenu && cd iwmenu && cargo build --release && cp target/release/iwmenu ~/.scripts && chmod +x ~/.scripts/iwmenu"
-      - "cd .."
+  #- type: script # install bzmenu, iwmenu
+   # snippets:
+    #  #- "git clone https://github.com/e-tho/bzmenu /tmp/bzmenu"
+     # - "mkdir -p ~/.scripts"
+      #- "git clone https://github.com/e-tho/iwmenu && cd iwmenu && cargo build --release && cp target/release/iwmenu ~/.scripts && chmod +x ~/.scripts/iwmenu"
+      #- "cd .."
       #- "git clone https://github.com/e-tho/bzmenu && cd bzmenu && cargo build --release && cp target/release/bzmenu ~/.scripts && chmod +x ~/.scripts/bzmenu"
       #- "cd .."
-      - "rm -r iwmenu"
+      #- "rm -r iwmenu"
 
   - type: script 
     snippets:
