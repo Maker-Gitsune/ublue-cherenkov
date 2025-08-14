@@ -68,16 +68,14 @@ modules:
         - dbus
         - bluez
         - iwd
-        - pkgconf
-        
-        
-        
-        
+        - pkgconf              
       
   - type: default-flatpaks
     configurations:
       - scope: user
-      - notify: false # Send notification after install/uninstall is finished (true/false)
+      - notify: true # Send notification after install/uninstall is finished (true/false)
+        repo:
+          title: Flathub (user)
         install:
           - app.zen_browser.zen
           - com.github.tchx84.Flatseal
