@@ -50,6 +50,7 @@ modules:
         - swaylock
         - swayidle
         - kanshi
+        - wl-mirror
         - clipman
         - kde-partitionmanager
         - wlogout
