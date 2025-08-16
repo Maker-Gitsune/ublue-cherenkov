@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 # WARNING: THIS IS UNTESTED/INCOMPLETE
 
 If you are seeing this, the image corresponding to this repo is not usable in the slightest.
 
 ## ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
->>>>>>> template/main
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
@@ -19,9 +17,7 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-<<<<<<< HEAD
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/maker-gitsune/ublue-cherenkov:latest
->>>>>>> template/main
   ```
 - Reboot to complete the rebase:
   ```
@@ -29,9 +25,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-<<<<<<< HEAD
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/maker-gitsune/ublue-cherenkov:latest
->>>>>>> template/main
   ```
 - Reboot again to complete the installation
   ```
@@ -49,7 +43,5 @@ If build on Fedora Atomic, you can generate an offline ISO with the instructions
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-<<<<<<< HEAD
 cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
->>>>>>> template/main
 ```
