@@ -85,10 +85,8 @@ modules:
       
   - type: default-flatpaks
     configurations:
-      - scope: user
       - notify: true # Send notification after install/uninstall is finished (true/false)
-        repo:
-          title: Flathub (user)
+        scope: user
         install:
           - app.zen_browser.zen
           - com.github.tchx84.Flatseal
@@ -121,10 +119,10 @@ modules:
       #- "cd .."
       #- "rm -r iwmenu"
 
-  - type: script 
-    snippets:
-      - "systemctl set-default graphical.target"
-      - "systemctl enable sddm.service"
+  #- type: script 
+   # snippets:
+    #  - "systemctl set-default graphical.target"
+     # - "systemctl enable sddm.service"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
