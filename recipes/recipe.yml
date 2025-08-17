@@ -65,7 +65,7 @@ modules:
         - NetworkManager
         - network-manager-applet
         - nm-connection-editor
-        - nm-connectoin-editor-desktop
+        - nm-connection-editor-desktop
         - bluez
         - blueman
         # cli things
