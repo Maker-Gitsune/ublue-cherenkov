@@ -102,7 +102,7 @@ modules:
           - io.mpv.Mpv
           - org.libreoffice.LibreOffice
           - org.libreoffice.LibreOffice.Locale
-          - org.libreoffice.LibreOffice.Help extension
+          - org.libreoffice.LibreOffice.Help
           - org.flameshot.Flameshot
           - net.blumia.pineapple-pictures
           - org.kde.kamoso
