@@ -63,6 +63,10 @@ modules:
         - wireplumber
         # wireless stuff
         - NetworkManager
+        - network-manager-applet
+        - nm-connection-editor
+        - nm-connectoin-editor-desktop
+        - bluez
         - blueman
         # cli things
         - fastfetch
@@ -87,6 +91,8 @@ modules:
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: user
+        repo:
+          title: Flathub (user)
         install:
           - app.zen_browser.zen
           - com.github.tchx84.Flatseal
@@ -95,6 +101,8 @@ modules:
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
           - org.libreoffice.LibreOffice
+          - org.libreoffice.LibreOffice.Locale
+          - org.libreoffice.LibreOffice.Help extension
           - org.flameshot.Flameshot
           - net.blumia.pineapple-pictures
           - org.kde.kamoso
@@ -123,6 +131,6 @@ modules:
    # snippets:
     #  - "systemctl set-default graphical.target"
      # - "systemctl enable sddm.service"
-
+  
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
