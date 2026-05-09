@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: ublue-cherenkov
 # description will be included in the image's metadata
-description: This is my personal OS image featuring the SwayFX Wayland compositor.
+description: This is my personal OS image featuring the Niri Wayland compositor.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -20,14 +20,14 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-%OS_VERSION%/swayfx-swayfx-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-%OS_VERSION%/tofik-nwg-shell-fedora-%OS_VERSION%.repo
     install:
       - micro
       - starship
-      - swayfx
+      - niri
       - SwayNotificationCenter
       - yazi
       - nwg-displays
@@ -43,8 +43,8 @@ modules:
         # interface stuff
         - fuzzel
         - waybar
-        - sddm
-        - sddm-wayland-sway
+        - greetd
+        - tuigreet
         - foot
         - gammastep
         - brightnessctl
@@ -60,12 +60,21 @@ modules:
         - fontconfig
         # audio stuff
         - pipewire
+        - pipewire-alsa 
+        - pipewire-pulseaudio
+        - pipewire-config-raop
+        - pipewire-gstreamer
+        - pipewire-jack-audio-connection-kit
+        - pipewire-libs
+        - pipewire-plugin-libcamera
+        - pipewire-ulits
         - wireplumber
         # wireless stuff
         - NetworkManager
         - network-manager-applet
         - nm-connection-editor
         - nm-connection-editor-desktop
+        - NetworkManager-bluetooth
         - bluez
         - blueman
         # cli things
@@ -76,16 +85,11 @@ modules:
         - gvfs-mtp
         - gvfs-nfs
         - gvfs
+        - gvfs-client
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
-        # for building bzmenu/iwmenu
-        #- rust
-        #- cargo
-        #- dbus
-        #- bluez
-        #- iwd
-        #- pkgconf              
+        - dbus
       
   - type: default-flatpaks
     configurations:
@@ -97,11 +101,11 @@ modules:
           - app.zen_browser.zen
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
+          - app.devsuite.Ptyxis
           # default-ish apps
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
           - org.libreoffice.LibreOffice
-          - org.flameshot.Flameshot
           - net.blumia.pineapple-pictures
           - org.kde.kamoso
           - org.kde.kcalc
@@ -114,21 +118,6 @@ modules:
       nerd-fonts:
         - JetBrainsMono
         - Iosevka
-  
-  #- type: script # install bzmenu, iwmenu
-   # snippets:
-    #  #- "git clone https://github.com/e-tho/bzmenu /tmp/bzmenu"
-     # - "mkdir -p ~/.scripts"
-      #- "git clone https://github.com/e-tho/iwmenu && cd iwmenu && cargo build --release && cp target/release/iwmenu ~/.scripts && chmod +x ~/.scripts/iwmenu"
-      #- "cd .."
-      #- "git clone https://github.com/e-tho/bzmenu && cd bzmenu && cargo build --release && cp target/release/bzmenu ~/.scripts && chmod +x ~/.scripts/bzmenu"
-      #- "cd .."
-      #- "rm -r iwmenu"
-
-  #- type: script 
-   # snippets:
-    #  - "systemctl set-default graphical.target"
-     # - "systemctl enable sddm.service"
   
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
