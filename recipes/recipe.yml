@@ -71,7 +71,7 @@ modules:
         - pipewire-jack-audio-connection-kit
         - pipewire-libs
         - pipewire-plugin-libcamera
-        - pipewire-ulits
+        - pipewire-utils
         - wireplumber
         # wireless stuff
         - NetworkManager
@@ -95,7 +95,7 @@ modules:
         - 7zip
         - jq
         - fd-find
-        - R-svg
+        - R-rsvg
         - ImageMagick
         - poppler
         - zoxide
