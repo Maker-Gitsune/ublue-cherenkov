@@ -40,6 +40,9 @@ modules:
   - type: dnf
     install:
       packages:
+        # Niri stuff
+        - xwayland-satellite
+        - xdg-desktop-portal-gnome
         # interface stuff
         - fuzzel
         - waybar
@@ -58,6 +61,7 @@ modules:
         - wlogout
         - rofimoji
         - fontconfig
+        - fastfetch
         # audio stuff
         - pipewire
         - pipewire-alsa 
@@ -77,9 +81,6 @@ modules:
         - NetworkManager-bluetooth
         - bluez
         - blueman
-        # cli things
-        - fastfetch
-        - cmatrix # because it looks cool
         # file manager stuff
         - tumbler
         - gvfs-mtp
@@ -89,8 +90,16 @@ modules:
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
-        - dbus
-      
+        # yazi stuff
+        - ripgrep
+        - 7zip
+        - jq
+        - fd-find
+        - R-svg
+        - ImageMagick
+        - poppler
+        - zoxide
+        
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
@@ -102,13 +111,15 @@ modules:
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
           - app.devsuite.Ptyxis
+          - io.github.kolumni.Bazaar
           # default-ish apps
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
           - org.libreoffice.LibreOffice
           - net.blumia.pineapple-pictures
-          - org.kde.kamoso
-          - org.kde.kcalc
+          - org.gnome.Snapshot
+          - be.alexandervanhee.gradia
+          - org.gnome.Calculator
           - org.gnome.clocks
         remove:
           # - org.gnome.eog
