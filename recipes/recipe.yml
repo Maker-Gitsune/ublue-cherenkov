@@ -111,7 +111,7 @@ modules:
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
           - app.devsuite.Ptyxis
-          - io.github.kolumni.Bazaar
+          - io.github.kolunmi.Bazaar
           # default-ish apps
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
