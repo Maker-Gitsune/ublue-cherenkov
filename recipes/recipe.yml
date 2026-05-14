@@ -61,7 +61,8 @@ modules:
         - wlogout
         - rofimoji
         - fontconfig
-        - polkit-gnome
+        - polkit
+        - polkit-kde
         - fastfetch
         # audio stuff
         - pipewire
