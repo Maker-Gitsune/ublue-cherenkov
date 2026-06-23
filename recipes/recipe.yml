@@ -133,8 +133,8 @@ modules:
   
   - type: files
     files: 
-      - source: system/greetd.toml
-        destination: /etc/greetd
+      - source: system/etc/greetd/config.toml
+      destination: /etc/greetd/
 
   - type: script
     snippets:
