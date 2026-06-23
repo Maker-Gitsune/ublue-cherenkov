@@ -61,7 +61,6 @@ modules:
         - wlogout
         - rofimoji
         - fontconfig
-        - polkit
         - polkit-kde
         - fastfetch
         # audio stuff
@@ -132,5 +131,14 @@ modules:
         - JetBrainsMono
         - Iosevka
   
+  - type: files
+    files: 
+      - source: system/greetd.toml
+        destination: /etc/greetd
+
+  - type: script
+    snippets:
+        - "systemctl enable greetd"
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
