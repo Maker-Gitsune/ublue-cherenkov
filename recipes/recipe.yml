@@ -3,7 +3,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: ublue-cherenkov
 # description will be included in the image's metadata
-description: This is my personal OS image featuring the Niri Wayland compositor.
+description: My personal OS image featuring the Niri Wayland compositor.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-main
@@ -36,6 +36,7 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - alacritty
 
   - type: dnf
     install:
@@ -104,9 +105,9 @@ modules:
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: user
+        scope: system
         repo:
-          title: Flathub (user)
+          title: Flathub (system)
         install:
           - app.zen_browser.zen
           - com.github.tchx84.Flatseal
