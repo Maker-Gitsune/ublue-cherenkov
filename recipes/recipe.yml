@@ -94,10 +94,10 @@ modules:
         - poppler
         - zoxide
       exclude:
-        - rofi
-        - rofi-themes
-        - wofi
-        - alacritty
+        #- rofi
+        #- rofi-themes
+        #- wofi
+        #- alacritty
 
   - type: default-flatpaks
     configurations:
