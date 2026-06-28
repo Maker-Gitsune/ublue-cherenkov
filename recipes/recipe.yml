@@ -30,6 +30,7 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+
   - type: dnf
     install:
       packages:
@@ -94,10 +95,7 @@ modules:
         - poppler
         - zoxide
       exclude:
-        #- rofi
-        #- rofi-themes
-        #- wofi
-        #- alacritty
+
 
   - type: default-flatpaks
     configurations:
