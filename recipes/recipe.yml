@@ -99,7 +99,7 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: false # Send notification after install/uninstall is finished (true/false)
+      - notify: true
         scope: system
         repo:
           title: Flathub (system)
@@ -118,7 +118,6 @@ modules:
           - be.alexandervanhee.gradia
           - org.gnome.Calculator
           - org.gnome.clocks
-        remove:
 
   - type: fonts
     fonts:
