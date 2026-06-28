@@ -94,7 +94,6 @@ modules:
         - ImageMagick
         - poppler
         - zoxide
-      exclude:
 
 
   - type: default-flatpaks
