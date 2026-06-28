@@ -29,6 +29,7 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - alacritty
 
   - type: dnf
     install:
@@ -93,10 +94,14 @@ modules:
         - ImageMagick
         - poppler
         - zoxide
-        
+      exclude:
+        - rofi
+        - rofi-themes
+        - wofi
+
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: false # Send notification after install/uninstall is finished (true/false)
         scope: system
         repo:
           title: Flathub (system)
@@ -109,26 +114,25 @@ modules:
           # default-ish apps
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
-          - org.libreoffice.LibreOffice
+          - org.onlyoffice.desktopeditors
           - net.blumia.pineapple-pictures
           - org.gnome.Snapshot
           - be.alexandervanhee.gradia
           - org.gnome.Calculator
           - org.gnome.clocks
         remove:
-          # - org.gnome.eog
 
   - type: fonts
     fonts:
       nerd-fonts:
         - JetBrainsMono
-        - Iosevka
   
   - type: files
     files: 
+      # greetd tuigreet-specific config
       - source: system/etc/greetd/config.toml
         destination: /etc/greetd
-
+        
   - type: script
     snippets:
         - "systemctl enable greetd"
