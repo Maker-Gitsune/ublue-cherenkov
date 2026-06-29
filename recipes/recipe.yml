@@ -76,6 +76,10 @@ modules:
         - ImageMagick
         - poppler
         - zoxide
+      exclude:
+        - wofi
+        - rofi
+        - rofi-themes
         
   - type: rpm-ostree
     repos:
@@ -93,9 +97,6 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - wofi
-      - rofi
-      - rofi-themes
 
   - type: default-flatpaks
     configurations:
