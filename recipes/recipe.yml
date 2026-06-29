@@ -76,10 +76,11 @@ modules:
         - ImageMagick
         - poppler
         - zoxide
-      exclude:
-        - wofi
-        - rofi
-        - rofi-themes
+      remove:
+        packages:
+          - wofi
+          - rofi
+          - rofi-themes
         
   - type: rpm-ostree
     repos:
