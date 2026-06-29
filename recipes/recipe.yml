@@ -96,7 +96,6 @@ modules:
       - wofi
       - rofi
       - rofi-themes
-      - alacritty
 
   - type: default-flatpaks
     configurations:
