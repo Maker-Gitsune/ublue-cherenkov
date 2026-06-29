@@ -12,24 +12,6 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
-    install:
-      - micro
-      - starship
-      - niri
-      - SwayNotificationCenter
-      - yazi
-    remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
   - type: dnf
     install:
       packages:
@@ -49,12 +31,13 @@ modules:
         - swayidle
         - kanshi
         - wl-mirror
-        - clipman
+        - cliphist
         - kde-partitionmanager
         - wlogout
         - rofimoji
         - fontconfig
         - polkit-kde
+        - gnome-keyring
         - fastfetch
         # audio stuff
         - pipewire
@@ -92,11 +75,27 @@ modules:
         - R-rsvg
         - ImageMagick
         - poppler
-        - zoxide
+        
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
+    install:
+      - starship
+      - niri
+      - SwayNotificationCenter
+      - yazi
+    remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     configurations:
-      - notify: true
+      - notify: false
         scope: system
         repo:
           title: Flathub (system)
@@ -132,4 +131,3 @@ modules:
         - "systemctl enable greetd"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
