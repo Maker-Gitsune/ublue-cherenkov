@@ -96,6 +96,7 @@ modules:
 
   - type: dnf
     remove:
+      auto-remove: false
       packages:
         - wofi
         - rofi
