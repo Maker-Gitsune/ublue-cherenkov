@@ -32,7 +32,7 @@ modules:
         - kanshi
         - wl-mirror
         - cliphist
-        - kde-partitionmanager
+        - gnome-disk-utility
         - wlogout
         - rofimoji
         - fontconfig
