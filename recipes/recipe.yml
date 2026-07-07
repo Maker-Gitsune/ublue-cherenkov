@@ -106,6 +106,7 @@ modules:
         - rofi
         - rofi-themes
         - alacritty
+        - mako
 
   - type: default-flatpaks
     configurations:
