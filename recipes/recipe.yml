@@ -37,7 +37,11 @@ modules:
         - rofimoji
         - fontconfig
         - polkit-kde
+        - polkit
         - gnome-keyring
+        - seahorse
+        - tuned
+        - tuned-switcher
         - fastfetch
         # audio stuff
         - pipewire
