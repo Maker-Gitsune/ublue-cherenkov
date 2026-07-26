@@ -8,7 +8,41 @@ ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either). The main use-case (out-of-box) is a single-user general purpose OS for a laptop/desktop.
 
-## Installation
+Notable packages/features (check [recipe.yml](./recipes/recipe.yml) for more information):
+ - Desktop/interface:
+   - NiriWM
+   - Waybar
+   - Fuzzel
+   - SwayNC
+ - display manager via greetd+tuigreet
+ - foot (intended as a fallback)
+ - supporting things:
+   - gammastep
+   - brightnessctl
+   - swaybg
+   - swaylock
+   - swayidle
+   - kanshi
+   - wl-mirror
+ - audio via pipewire
+ - file manager - Thunar (Yazi is currently included)
+ 
+ Default apps (via Flatpak):
+ - Browser (Zen)
+ - Flatpak management:
+   - Flatseal
+   - Warehouse
+   - Bazaar
+ - Terminal emulator (Ptyxis)
+ - System monitor (MissionCenter)
+ - Video player (Mpv)
+ - Office suite (onlyoffice)
+ - Photo viewer (pineapple-pictures)
+ - Camera (Snapshot)
+ - light photo annotation/editing (Gradia)
+ - Calculator (GNOME calculator)
+ - Clock (GNOME clocks)
+ ## Installation
 
 > [!WARNING]  
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
@@ -33,6 +67,15 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+
+## todo
+- [ ] include default/baseline config. files
+- [ ] opiniated "second stage install"
+  -  [ ] system theming and associated configuration files
+  -  [ ] fuzzel menus/utilities
+- image variants?
+  -  [ ] virtualisation support
+  -  [ ] Nvidia-specific?
 
 ## Verification
 
