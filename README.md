@@ -71,8 +71,8 @@ The `latest` tag will automatically point to the latest build. That build will s
 ## todo
 - [ ] include default/baseline config. files
 - [ ] opiniated "second stage install"
-  -  [ ] system theming and associated configuration files
-  -  [ ] fuzzel menus/utilities
+  -  system theming and associated configuration files
+  -  menus/utilities
 - image variants?
   -  [ ] virtualisation support
   -  [ ] Nvidia-specific?
