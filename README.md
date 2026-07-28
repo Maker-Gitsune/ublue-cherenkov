@@ -1,6 +1,6 @@
-# WARNING: THIS IMAGE IS ACTIVE DEVELOPMENT
+# WARNING: THIS IMAGE IS IN ACTIVE DEVELOPMENT
 
-The image corresponding to this repo is usable, but is lacking important functions. **Proceed with caution.**
+The image corresponding to this repo is usable, but lacks some important functions. **Proceed with caution.**
 
 ## ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 
@@ -25,7 +25,7 @@ Notable packages/features (check [recipe.yml](./recipes/recipe.yml) for more inf
    - kanshi
    - wl-mirror
  - audio via pipewire
- - file manager - Thunar (Yazi is currently included)
+ - file manager - Thunar (Yazi is also currently included)
  
  Default apps (via Flatpak):
  - Browser (Zen)
