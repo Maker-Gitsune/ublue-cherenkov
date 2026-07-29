@@ -8,7 +8,7 @@ ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either). The main use-case (out-of-box) is a single-user general purpose OS for a laptop/desktop.
 
-Notable packages/features (check [recipe.yml](./recipes/recipe.yml) for more information):
+### Notable packages/features (check [recipe.yml](./recipes/recipe.yml) for more information):
  - Desktop/interface:
    - NiriWM
    - Waybar
@@ -27,7 +27,7 @@ Notable packages/features (check [recipe.yml](./recipes/recipe.yml) for more inf
  - audio via pipewire
  - file manager - Thunar (Yazi is also currently included)
  
- Default apps (via Flatpak):
+ ### Default apps (via Flatpak):
  - Browser (Zen)
  - Flatpak management:
    - Flatseal
