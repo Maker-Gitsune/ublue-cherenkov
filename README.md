@@ -48,7 +48,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
 To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  - The image comes with its own selection of Flatpaks, so a ```flatpak uninstall --all``` is recommended if you are only rebasing an existing install to specifically use ublue-cherenkov.
+  - The image comes with its own selection of Flatpaks, so a ```flatpak uninstall --all``` is recommended if you are rebasing a brand-new install to specifically use ublue-cherenkov.
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/maker-gitsune/ublue-cherenkov:latest
   ```
