@@ -39,9 +39,9 @@ modules:
         - polkit-kde
         - polkit
         - gnome-keyring
+        - libsecret
         - seahorse
-        - tuned
-        - tuned-switcher
+        - power-profiles-daemon
         - fastfetch
         # audio stuff
         - pipewire
@@ -126,7 +126,7 @@ modules:
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
           - org.onlyoffice.desktopeditors
-          - net.blumia.pineapple-pictures
+          - org.gnome.eog
           - org.gnome.Snapshot
           - be.alexandervanhee.gradia
           - org.gnome.Calculator
