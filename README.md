@@ -23,6 +23,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
    - kanshi
    - wl-mirror
  - audio via pipewire
+ - iwd as WiFI backend
  - file manager - Thunar (Yazi is also currently included)
  
  ### Default apps (via Flatpak):
