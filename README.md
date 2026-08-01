@@ -35,7 +35,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - System monitor (MissionCenter)
  - Video player (Mpv)
  - Office suite (onlyoffice)
- - Photo viewer (pineapple-pictures)
+ - Photo viewer (eye of GNOME)
  - Camera (Snapshot)
  - light photo annotation/editing (Gradia)
  - Calculator (GNOME calculator)

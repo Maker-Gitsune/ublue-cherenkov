@@ -55,6 +55,7 @@ modules:
         - pipewire-utils
         - wireplumber
         # wireless stuff
+        - iwd
         - NetworkManager
         - network-manager-applet
         - nm-connection-editor
@@ -142,6 +143,9 @@ modules:
       # greetd tuigreet-specific config
       - source: system/etc/greetd/config.toml
         destination: /etc/greetd
+      # NetworkManager enable iwd
+      - source: system/etc/wifi_backend.conf
+        destination: /etc/NetworkManager/conf.d
         
   - type: script
     snippets:
