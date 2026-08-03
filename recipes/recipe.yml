@@ -142,7 +142,7 @@ modules:
   
   - type: files
     files: 
-      # greetd tuigreet-specific config
+      # greetd tuigreet-sinjectionpecific config
       - source: system/etc/greetd/config.toml
         destination: /etc/greetd
       # NetworkManager enable iwd
