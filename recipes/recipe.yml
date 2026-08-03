@@ -73,6 +73,7 @@ modules:
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
+        - xarchiver
         # yazi stuff
         - ripgrep
         - 7zip
