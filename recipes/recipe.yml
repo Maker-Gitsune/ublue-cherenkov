@@ -54,6 +54,7 @@ modules:
         - pipewire-plugin-libcamera
         - pipewire-utils
         - wireplumber
+        - pavucontrol
         # wireless stuff
         - iwd
         - NetworkManager
@@ -148,7 +149,7 @@ modules:
       - source: system/etc/wifi_backend.conf
         destination: /etc/NetworkManager/conf.d
       # waybar baseline config
-      - source: system/etc/waybar/*
+      - source: system/etc/waybar
         destination: /etc/waybar
       # niri baseline config
       - source: system/etc/niri/config.kdl
