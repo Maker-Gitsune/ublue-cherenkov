@@ -54,7 +54,6 @@ modules:
         - pipewire-plugin-libcamera
         - pipewire-utils
         - wireplumber
-        - volumeicon
         # wireless stuff
         - iwd
         - NetworkManager
@@ -134,7 +133,6 @@ modules:
           - be.alexandervanhee.gradia
           - org.gnome.Calculator
           - org.gnome.clocks
-          - com.saivert.pwvucontrol
 
   - type: fonts
     fonts:

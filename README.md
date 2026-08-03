@@ -1,6 +1,6 @@
 # ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 > [!WARNING]  
-> This image is in active development; it's usable, but potentially breaking changes might occur. **Proceed with caution.**
+> This image is in active development; it is usable, but expect missing important functions/potentially breaking changes. **Proceed with caution.**
 
 ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
 
@@ -23,7 +23,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
    - kanshi
    - wl-mirror
  - audio via pipewire
- - iwd as WiFi backend
+ - iwd as WiFI backend
  - file manager - Thunar (Yazi is also currently included)
  
  ### Default apps (via Flatpak):
