@@ -2,7 +2,7 @@
 > [!WARNING]  
 > This image is in active development; it is usable, but expect missing important functions/potentially breaking changes. **Proceed with caution.**
 
-ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
+ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions and some baseline config. files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either). The main use-case (out-of-box) is a single-user general purpose OS for a laptop/desktop.
 

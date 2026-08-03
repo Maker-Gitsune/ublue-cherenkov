@@ -147,9 +147,16 @@ modules:
       # NetworkManager enable iwd
       - source: system/etc/wifi_backend.conf
         destination: /etc/NetworkManager/conf.d
-        
+      # waybar baseline config
+      - source: system/etc/waybar/*
+        destination: /etc/waybar
+      # niri baseline config
+      - source: system/etc/niri/config.kdl
+        destination: /etc/niri/
+
   - type: script
     snippets:
         - "systemctl enable greetd"
+        - "systemctl enable swayosd-libinput-backend.service"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
