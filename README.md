@@ -83,7 +83,8 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
 ```
 ## todo:
-- [ ] include default/baseline config. files
+- [x] include default/baseline config. files
+  - Niri, waybar, fuzzel configurations added in release 26.08
 - [ ] opiniated "second stage install"
   -  system theming and associated configuration files
   -  menus/utilities
