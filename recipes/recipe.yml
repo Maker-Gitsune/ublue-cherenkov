@@ -36,12 +36,12 @@ modules:
         - wlogout
         - rofimoji
         - fontconfig
-        - polkit-kde
+        - xfce-polkit
         - polkit
         - gnome-keyring
         - seahorse
-        - tuned
-        - tuned-switcher
+        - libsecret
+        - power-profiles-daemon
         - fastfetch
         # audio stuff
         - pipewire
@@ -54,7 +54,9 @@ modules:
         - pipewire-plugin-libcamera
         - pipewire-utils
         - wireplumber
+        - pavucontrol
         # wireless stuff
+        - iwd
         - NetworkManager
         - network-manager-applet
         - nm-connection-editor
@@ -71,6 +73,7 @@ modules:
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
+        - xarchiver
         # yazi stuff
         - ripgrep
         - 7zip
@@ -80,6 +83,7 @@ modules:
         - ImageMagick
         - poppler
         - zoxide
+        - chafa
         
   - type: rpm-ostree
     repos:
@@ -126,7 +130,7 @@ modules:
           - io.missioncenter.MissionCenter
           - io.mpv.Mpv
           - org.onlyoffice.desktopeditors
-          - net.blumia.pineapple-pictures
+          - org.gnome.eog
           - org.gnome.Snapshot
           - be.alexandervanhee.gradia
           - org.gnome.Calculator
@@ -139,12 +143,25 @@ modules:
   
   - type: files
     files: 
-      # greetd tuigreet-specific config
+      # greetd tuigreet-sinjectionpecific config
       - source: system/etc/greetd/config.toml
         destination: /etc/greetd
+      # NetworkManager enable iwd
+      - source: system/etc/wifi_backend.conf
+        destination: /etc/NetworkManager/conf.d
+      # waybar baseline config
+      - source: system/etc/waybar
+        destination: /etc/xdg/waybar
+      # niri baseline config
+      - source: system/etc/niri/config.kdl
+        destination: /etc/niri/config.kdl
+      # adjusted fuzzel config
+      - source: system/etc/fuzzel/fuzzel.ini
+        destination: /etc/xdg/fuzzel/fuzzel.ini
         
   - type: script
     snippets:
         - "systemctl enable greetd"
+        - "systemctl enable swayosd-libinput-backend.service"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

@@ -1,8 +1,8 @@
 # ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 > [!WARNING]  
-> This image is in active development; it is usable, but expect missing important functions/potentially breaking changes. **Proceed with caution.**
+> This image is in active development; it is usable, but potentially breaking changes might still occur. **Proceed with caution.**
 
-ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
+ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions and some baseline configuration files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either). The main use-case (out-of-box) is a single-user general purpose OS for a laptop/desktop.
 
@@ -23,6 +23,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
    - kanshi
    - wl-mirror
  - audio via pipewire
+ - iwd as WiFI backend
  - file manager - Thunar (Yazi is also currently included)
  
  ### Default apps (via Flatpak):
@@ -35,11 +36,18 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - System monitor (MissionCenter)
  - Video player (Mpv)
  - Office suite (onlyoffice)
- - Photo viewer (pineapple-pictures)
+ - Photo viewer (eye of GNOME)
  - Camera (Snapshot)
  - light photo annotation/editing (Gradia)
  - Calculator (GNOME calculator)
  - Clock (GNOME clocks)
+ ## [Baseline Configuration files](files/system/etc)
+ ublue-cherenkov ships with some baseline configuration files for Niri, Waybar, Fuzzel and greetd. All of those configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos](pictures/)):
+  - Niri - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
+  - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
+  - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
+  - fuzzel - modifications to somewhat match minor styling in Niri/waybar configurations, use JetBrains Mono Nerd Font and enable per-app actions.
+  - a config file to enable networkmanager to use iwd.
  ## Installation
 
 > [!WARNING]  
@@ -75,7 +83,8 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
 ```
 ## todo:
-- [ ] include default/baseline config. files
+- [x] include default/baseline config. files
+  - Niri, waybar, fuzzel configurations added in release 26.08
 - [ ] opiniated "second stage install"
   -  system theming and associated configuration files
   -  menus/utilities
