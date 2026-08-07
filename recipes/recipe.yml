@@ -155,6 +155,9 @@ modules:
       # niri baseline config
       - source: system/etc/niri/config.kdl
         destination: /etc/niri/config.kdl
+      # adjusted fuzzel config
+      - source: system/etc/fuzzel/fuzzel.ini
+        destination: /etc/xdg/fuzzel/fuzzel.ini
         
   - type: script
     snippets:
