@@ -154,8 +154,8 @@ modules:
         destination: /etc/xdg/waybar
       # niri baseline config
       - source: system/etc/niri/config.kdl
-        destination: /etc/niri
-
+        destination: /etc/niri/config.kdl
+        
   - type: script
     snippets:
         - "systemctl enable greetd"
