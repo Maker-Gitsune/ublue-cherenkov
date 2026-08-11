@@ -18,6 +18,7 @@ modules:
         # Niri stuff
         - xwayland-satellite
         - xdg-desktop-portal-gnome
+        - xdg-desktop-porta-gtk
         # interface stuff
         - fuzzel
         - waybar
@@ -94,7 +95,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
     install:
       - starship
-      - niri
+      - niri --setopt=install_weak_deps=False --best
       - SwayNotificationCenter
       - swayosd
       - yazi
@@ -111,8 +112,6 @@ modules:
         - wofi
         - rofi
         - rofi-themes
-        - alacritty
-        - mako
 
   - type: default-flatpaks
     configurations:
