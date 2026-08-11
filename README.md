@@ -47,6 +47,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
   - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
   - fuzzel - modifications to somewhat match minor styling in Niri/waybar configurations, use JetBrains Mono Nerd Font and enable per-app actions.
+  - foot - use JetBrains Mono Nerd Font
   - a config file to enable networkmanager to use iwd.
  ## Installation
 
