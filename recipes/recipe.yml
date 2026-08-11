@@ -95,7 +95,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
     install:
       - starship
-      - niri --setopt=install_weak_deps=False --best
       - SwayNotificationCenter
       - swayosd
       - yazi
@@ -104,6 +103,10 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: script
+      snippets:
+          - dnf --setopt=install_weak_deps=False --best install niri
 
   - type: dnf
     remove:
