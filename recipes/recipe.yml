@@ -73,7 +73,7 @@ modules:
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
-        - xarchiver
+        - file-roller
         # yazi stuff
         - ripgrep
         - 7zip
@@ -149,7 +149,7 @@ modules:
       # NetworkManager enable iwd
       - source: system/etc/wifi_backend.conf
         destination: /etc/NetworkManager/conf.d
-      # waybar baseline config
+      # waybar baseline configs
       - source: system/etc/waybar
         destination: /etc/xdg/waybar
       # niri baseline config
@@ -158,6 +158,9 @@ modules:
       # adjusted fuzzel config
       - source: system/etc/fuzzel/fuzzel.ini
         destination: /etc/xdg/fuzzel/fuzzel.ini
+      # adjusted foot config
+      - source: system/etc/foot/foot.ini
+        destination: /etc/xdg/foot/foot.ini
         
   - type: script
     snippets:
