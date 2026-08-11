@@ -35,6 +35,7 @@ modules:
         - cliphist
         - gnome-disk-utility
         - wlogout
+        - rofimoji
         - fontconfig
         - xfce-polkit
         - polkit
@@ -84,13 +85,6 @@ modules:
         - poppler
         - zoxide
         - chafa
-        # rofimoji stuff
-        - python3
-        - wl-clipboard
-        - wtype
-        - xclip
-        - xdotool
-        - xsel 
         
   - type: rpm-ostree
     repos:
@@ -113,7 +107,14 @@ modules:
   - type: script
     snippets:
         - dnf --setopt=install_weak_deps=False --best install niri -y
-        - dnf --setopt=install_weak_deps=False --best install rofimoji -y
+
+  - type: dnf
+    remove:
+      auto-remove: false
+      packages:
+        - wofi
+        - rofi
+        - rofi-themes
 
   - type: default-flatpaks
     configurations:
