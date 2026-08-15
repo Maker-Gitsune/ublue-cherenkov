@@ -86,7 +86,7 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
 ## todo:
 - [x] include default/baseline config. files
   - Niri, waybar, fuzzel configurations added in release 26.08
-  - Foot configuration added in release 26.08.1
+  - Foot, swaync configuration added in release 26.08.1
 - [ ] opiniated "second stage install"
   -  system theming and associated configuration files
   -  menus/utilities

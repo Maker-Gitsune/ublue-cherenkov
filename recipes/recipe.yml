@@ -35,7 +35,6 @@ modules:
         - cliphist
         - gnome-disk-utility
         - wlogout
-        - rofimoji
         - fontconfig
         - xfce-polkit
         - polkit
@@ -108,14 +107,6 @@ modules:
     snippets:
         - dnf --setopt=install_weak_deps=False --best install niri -y
 
-  - type: dnf
-    remove:
-      auto-remove: false
-      packages:
-        - wofi
-        - rofi
-        - rofi-themes
-
   - type: default-flatpaks
     configurations:
       - notify: false
@@ -163,6 +154,9 @@ modules:
       # adjusted foot config
       - source: system/etc/foot/foot.ini
         destination: /etc/xdg/foot/foot.ini
+      # adjusted swaync configs
+      - source: system/etc/swaync
+        destination: /etc/xdg/swaync
         
   - type: script
     snippets:
