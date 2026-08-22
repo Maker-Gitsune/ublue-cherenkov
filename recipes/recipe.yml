@@ -22,14 +22,13 @@ modules:
         # interface stuff
         - fuzzel
         - waybar
-        - greetd
-        - tuigreet
+        - swaylock
+        - swayidle
+        - swaybg
+        # system stuff
         - foot
         - gammastep
         - brightnessctl
-        - swaybg
-        - swaylock
-        - swayidle
         - kanshi
         - wl-mirror
         - cliphist
@@ -43,6 +42,9 @@ modules:
         - libsecret
         - power-profiles-daemon
         - fastfetch
+        # session manager
+        - greetd
+        - tuigreet
         # audio stuff
         - pipewire
         - pipewire-alsa 
