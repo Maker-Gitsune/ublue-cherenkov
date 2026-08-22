@@ -18,23 +18,22 @@ modules:
         # Niri stuff
         - xwayland-satellite
         - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
         # interface stuff
         - fuzzel
         - waybar
-        - greetd
-        - tuigreet
+        - swaylock
+        - swayidle
+        - swaybg
+        # system stuff
         - foot
         - gammastep
         - brightnessctl
-        - swaybg
-        - swaylock
-        - swayidle
         - kanshi
         - wl-mirror
         - cliphist
         - gnome-disk-utility
         - wlogout
-        - rofimoji
         - fontconfig
         - xfce-polkit
         - polkit
@@ -43,6 +42,9 @@ modules:
         - libsecret
         - power-profiles-daemon
         - fastfetch
+        # session manager
+        - greetd
+        - tuigreet
         # audio stuff
         - pipewire
         - pipewire-alsa 
@@ -73,7 +75,7 @@ modules:
         - Thunar
         - thunar-volman
         - thunar-archive-plugin
-        - xarchiver
+        - file-roller
         # yazi stuff
         - ripgrep
         - 7zip
@@ -94,7 +96,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
     install:
       - starship
-      - niri
       - SwayNotificationCenter
       - swayosd
       - yazi
@@ -104,15 +105,9 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: dnf
-    remove:
-      auto-remove: false
-      packages:
-        - wofi
-        - rofi
-        - rofi-themes
-        - alacritty
-        - mako
+  - type: script
+    snippets:
+        - dnf --setopt=install_weak_deps=False --best install niri -y
 
   - type: default-flatpaks
     configurations:
@@ -149,7 +144,7 @@ modules:
       # NetworkManager enable iwd
       - source: system/etc/wifi_backend.conf
         destination: /etc/NetworkManager/conf.d
-      # waybar baseline config
+      # waybar baseline configs
       - source: system/etc/waybar
         destination: /etc/xdg/waybar
       # niri baseline config
@@ -158,6 +153,12 @@ modules:
       # adjusted fuzzel config
       - source: system/etc/fuzzel/fuzzel.ini
         destination: /etc/xdg/fuzzel/fuzzel.ini
+      # adjusted foot config
+      - source: system/etc/foot/foot.ini
+        destination: /etc/xdg/foot/foot.ini
+      # adjusted swaync configs
+      - source: system/etc/swaync
+        destination: /etc/xdg/swaync
         
   - type: script
     snippets:
