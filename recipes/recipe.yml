@@ -25,15 +25,15 @@ modules:
         - swaylock
         - swayidle
         - swaybg
+        - wlogout
+        - cliphist
         # system stuff
         - foot
         - gammastep
         - brightnessctl
         - kanshi
         - wl-mirror
-        - cliphist
         - gnome-disk-utility
-        - wlogout
         - fontconfig
         - xfce-polkit
         - polkit
@@ -137,8 +137,11 @@ modules:
         - JetBrainsMono
   
   - type: files
-    files: 
-      # greetd tuigreet-sinjectionpecific config
+    files:
+      # xdg-desktop-portal config
+      - source: system/usr/portals.conf
+        destination: /usr/share/xdg-desktop-portal/niri-portals.conf
+      # greetd tuigreet-specific config
       - source: system/etc/greetd/config.toml
         destination: /etc/greetd
       # NetworkManager enable iwd
