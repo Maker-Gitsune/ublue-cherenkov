@@ -89,6 +89,7 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
 - [x] include default/baseline config. files
   - Niri, waybar, fuzzel configurations added in release 26.08
   - Foot, swaync configuration added in release 26.08.1
+  - xdg-desktop-portals added 08/26/26
 - [ ] opiniated "second stage install"
   -  system theming and associated configuration files
   -  menus/utilities

@@ -109,27 +109,7 @@ modules:
     snippets:
         - dnf --setopt=install_weak_deps=False --best install niri -y
 
-  - type: default-flatpaks
-    configurations:
-      - notify: false
-        scope: system
-        repo:
-          title: Flathub (system)
-        install:
-          - app.zen_browser.zen
-          - com.github.tchx84.Flatseal
-          - io.github.flattool.Warehouse
-          - app.devsuite.Ptyxis
-          - io.github.kolunmi.Bazaar
-          # default-ish apps
-          - io.missioncenter.MissionCenter
-          - io.mpv.Mpv
-          - org.onlyoffice.desktopeditors
-          - org.gnome.eog
-          - org.gnome.Snapshot
-          - be.alexandervanhee.gradia
-          - org.gnome.Calculator
-          - org.gnome.clocks
+  - from-file: common/default-flatpaks.yml
 
   - type: fonts
     fonts:
