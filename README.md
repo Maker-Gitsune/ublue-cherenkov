@@ -48,7 +48,9 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
   - fuzzel - modifications to somewhat match minor styling in Niri/waybar configurations, use JetBrains Mono Nerd Font and enable per-app actions.
   - foot - use JetBrains Mono Nerd Font.
+  - swaync - some minor styling to match the others.
   - a config file to enable networkmanager to use iwd.
+  - an xdg-desktop-portals config that should allow for expected/normal file chooser behavior OOTB.
  ## Installation
 
 > [!WARNING]  
