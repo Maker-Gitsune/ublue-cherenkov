@@ -5,7 +5,7 @@ modules:
   - type: dnf
     install:
       packages:
-        # Niri stuff
+        # Niri dependencies
         - xwayland-satellite
         - xdg-desktop-portal-gnome
         - xdg-desktop-portal-gtk

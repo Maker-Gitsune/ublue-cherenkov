@@ -2,7 +2,6 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 modules:
-  - from-file: common/niri.yml
   - type: dnf
     install:
       packages:

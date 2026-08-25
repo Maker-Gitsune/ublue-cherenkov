@@ -1,0 +1,15 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+modules:
+  - type: dnf
+    install:
+      packages:
+      - virt-install
+      - virt-manager
+      - virt oviewer
+      - qemu
+
+  - type: script
+    snippets:
+        - "systemctl enable libvirtd"

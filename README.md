@@ -94,5 +94,6 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
   -  system theming and associated configuration files
   -  menus/utilities
 - image variants?
-  -  [ ] virtualisation support
+  -  [x] virtualisation support
+    - added in release 26.09
   -  [ ] Nvidia-specific? 

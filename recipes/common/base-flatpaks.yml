@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://schema.blue-build.org/module-latest.json
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v2.json
 
 type: default-flatpaks
 configurations:
