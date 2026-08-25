@@ -2,12 +2,11 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 
 type: default-flatpaks
-  configurations:
-    - notify: false
-      scope: system
-      repo:
-        title: Flathub (system)
-system:        
+configuration:
+  - notify: false
+    scope: system
+    repo:
+      title: Flathub (system)
     install:
       - app.zen_browser.zen
       - com.github.tchx84.Flatseal
@@ -15,6 +14,7 @@ system:
       - app.devsuite.Ptyxis
       - io.github.kolunmi.Bazaar
       - io.missioncenter.MissionCenter
+      # default-ish apps
       - io.mpv.Mpv
       - org.onlyoffice.desktopeditors
       - org.gnome.eog
