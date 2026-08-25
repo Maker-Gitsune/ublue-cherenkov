@@ -7,17 +7,18 @@ type: default-flatpaks
       scope: system
       repo:
         title: Flathub (system)
-      install:
-        - app.zen_browser.zen
-        - com.github.tchx84.Flatseal
-        - io.github.flattool.Warehouse
-        - app.devsuite.Ptyxis
-        - io.github.kolunmi.Bazaar
-        - io.missioncenter.MissionCenter
-        - io.mpv.Mpv
-        - org.onlyoffice.desktopeditors
-        - org.gnome.eog
-        - org.gnome.Snapshot
-        - be.alexandervanhee.gradia
-        - org.gnome.Calculator
-        - org.gnome.clocks
+system:        
+    install:
+      - app.zen_browser.zen
+      - com.github.tchx84.Flatseal
+      - io.github.flattool.Warehouse
+      - app.devsuite.Ptyxis
+      - io.github.kolunmi.Bazaar
+      - io.missioncenter.MissionCenter
+      - io.mpv.Mpv
+      - org.onlyoffice.desktopeditors
+      - org.gnome.eog
+      - org.gnome.Snapshot
+      - be.alexandervanhee.gradia
+      - org.gnome.Calculator
+      - org.gnome.clocks
