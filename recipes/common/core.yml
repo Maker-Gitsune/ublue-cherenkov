@@ -1,0 +1,96 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+modules:
+  - from-file: common/niri.yml
+  - type: dnf
+    install:
+      packages:
+        # system stuff
+        - foot
+        - gammastep
+        - brightnessctl
+        - kanshi
+        - wl-mirror
+        - gnome-disk-utility
+        - fontconfig
+        - xfce-polkit
+        - polkit
+        - gnome-keyring
+        - seahorse
+        - libsecret
+        - power-profiles-daemon
+        - fastfetch
+        # session manager
+        - greetd
+        - tuigreet
+        # audio stuff
+        - pipewire
+        - pipewire-alsa 
+        - pipewire-pulseaudio
+        - pipewire-config-raop
+        - pipewire-gstreamer
+        - pipewire-jack-audio-connection-kit
+        - pipewire-libs
+        - pipewire-plugin-libcamera
+        - pipewire-utils
+        - wireplumber
+        - pavucontrol
+        # wireless stuff
+        - iwd
+        - NetworkManager
+        - network-manager-applet
+        - nm-connection-editor
+        - nm-connection-editor-desktop
+        - NetworkManager-bluetooth
+        - bluez
+        - blueman
+        # file manager stuff
+        - tumbler
+        - gvfs-mtp
+        - gvfs-nfs
+        - gvfs
+        - gvfs-client
+        - Thunar
+        - thunar-volman
+        - thunar-archive-plugin
+        - file-roller
+        # yazi stuff
+        - ripgrep
+        - 7zip
+        - jq
+        - fd-find
+        - R-rsvg
+        - ImageMagick
+        - poppler
+        - zoxide
+        - chafa
+  
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
+    install:
+      - starship
+      - yazi
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+
+  - type: files
+    files:
+      # greetd tuigreet-specific config
+      - source: system/etc/greetd/config.toml
+        destination: /etc/greetd
+      # NetworkManager enable iwd
+      - source: system/etc/wifi_backend.conf
+        destination: /etc/NetworkManager/conf.d
+      # adjusted foot config
+      - source: system/etc/foot/foot.ini
+        destination: /etc/xdg/foot/foot.ini
+
+  - type: script
+    snippets:
+        - "systemctl enable greetd"

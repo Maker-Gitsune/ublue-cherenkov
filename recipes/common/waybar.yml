@@ -1,0 +1,47 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+modules:
+  - type: dnf
+    install:
+      packages:
+      # interface stuff
+      - fuzzel
+      - waybar
+      - swaylock
+      - swayidle
+      - swaybg
+      - wlogout
+      - cliphist
+        
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/erikreider/swayosd/repo/fedora-%OS_VERSION%/erikreider-swayosd-fedora-%OS_VERSION%.repo
+    install:
+      - SwayNotificationCenter
+      - swayosd
+    remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: files
+    files:
+      # waybar baseline configs
+      - source: system/etc/waybar
+        destination: /etc/xdg/waybar
+      # adjusted fuzzel config
+      - source: system/etc/fuzzel/fuzzel.ini
+        destination: /etc/xdg/fuzzel/fuzzel.ini
+      # adjusted swaync configs
+      - source: system/etc/swaync
+        destination: /etc/xdg/swaync
+      # niri config (waybar-specific)
+      - source: system/etc/niri/config.kdl
+        destination: /etc/niri/config.kdl
+        
+  - type: script
+    snippets:
+        - "systemctl enable swayosd-libinput-backend.service"

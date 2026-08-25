@@ -1,0 +1,25 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+modules:
+  - type: dnf
+    install:
+      packages:
+        # Niri stuff
+        - xwayland-satellite
+        - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
+
+  - type: script
+    snippets:
+        - dnf --setopt=install_weak_deps=False --best install niri -y
+
+  - type: files
+    files:
+      # xdg-desktop-portal config
+      - source: system/usr/portals.conf
+        destination: /usr/share/xdg-desktop-portal/niri-portals.conf
