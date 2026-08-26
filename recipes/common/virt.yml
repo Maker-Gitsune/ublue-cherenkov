@@ -11,7 +11,7 @@ modules:
       packages:
       - virt-install
       - virt-manager
-      - virt oviewer
+      - virt-viewer
       - qemu
 
   - type: script
