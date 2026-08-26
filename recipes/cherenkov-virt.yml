@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: ublue-cherenkov-virt
+name: cherenkov-virt
 # description will be included in the image's metadata
 description: A minimal/opiniated ublue image featuring the Niri Wayland compositor with waybar, baseline configs, and virtualization support.
 

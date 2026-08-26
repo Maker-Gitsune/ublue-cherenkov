@@ -2,11 +2,13 @@
 > [!WARNING]  
 > This image is in active development; it is usable, but potentially breaking changes might still occur. **Proceed with caution.**
 
-ublue-cherenkov is a customized Universal Blue image featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions and some baseline configuration files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
+ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM/Waybar-based desktop. It is based off of the uBlue base-main image with additions and some baseline configuration files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either). The main use-case (out-of-box) is a single-user general purpose OS for a laptop/desktop.
-
-### Notable packages/features (check [recipe.yml](./recipes/recipe.yml) for more information):
+## Available images:
+ - ```cherenkov``` - a minimal NiriWM/Waybar setup intended for general use
+ - ```cherenkov-virt``` -  the above but with ```libvirt```/```qemu``` installed
+## Notable packages/features (check [the recipes](./recipes) for more information):
  - Desktop/interface:
    - NiriWM
    - Waybar
@@ -60,8 +62,9 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   - The image comes with its own selection of Flatpaks, so a ```flatpak uninstall --all``` is recommended if you are rebasing a brand-new install to specifically use ublue-cherenkov.
+  - Just replace ```cherenkov:latest``` with ```cherenkov-virt:latest``` or any other variant that might be added.
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/maker-gitsune/ublue-cherenkov:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/maker-gitsune/cherenkov:latest
   ```
 - Reboot to complete the rebase:
   ```
@@ -69,7 +72,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/maker-gitsune/ublue-cherenkov:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/maker-gitsune/cherenkov:latest
   ```
 - Reboot again to complete the installation
   ```
@@ -83,8 +86,9 @@ The `latest` tag will automatically point to the latest build. That build will s
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
+cosign verify --key cosign.pub ghcr.io/maker-gitsune/cherenkov
 ```
+- To verify a cherenkov variant, just replace ```cherenkov:latest``` with ```cherenkov-virt:latest``` or the name of any other variant that might be added.
 ## todo:
 - [x] include default/baseline config. files
   - Niri, waybar, fuzzel configurations added in release 26.08
@@ -94,6 +98,5 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/ublue-cherenkov
   -  system theming and associated configuration files
   -  menus/utilities
 - image variants?
-  -  [x] virtualisation support
-    - added in release 26.09
+  -  [x] virtualisation support - added in release 26.09
   -  [ ] Nvidia-specific? 
