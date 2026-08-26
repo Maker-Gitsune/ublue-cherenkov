@@ -1,6 +1,10 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
+# References:
+# - https://discussion.fedoraproject.org/t/current-best-practice-for-virtual-machines-on-immutable-system-kinoite-silverblue/73423
+# - https://discussion.fedoraproject.org/t/best-way-to-install-libvirt-and-virt-manager-on-silverblue/30700
+
 modules:
   - type: dnf
     install:
