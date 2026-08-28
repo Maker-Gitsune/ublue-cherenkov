@@ -81,4 +81,3 @@ modules:
   - type: script
     snippets:
         - "systemctl enable greetd"
-        - "systemctl enable nix-daemon"
