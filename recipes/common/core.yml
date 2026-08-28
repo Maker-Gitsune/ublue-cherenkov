@@ -19,8 +19,6 @@ modules:
         - libsecret
         - power-profiles-daemon
         - fastfetch
-        - nix
-        - nix-daemon
         # session manager
         - greetd
         - tuigreet
