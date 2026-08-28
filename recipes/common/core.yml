@@ -13,13 +13,14 @@ modules:
         - wl-mirror
         - gnome-disk-utility
         - fontconfig
-        - xfce-polkit
         - polkit
         - gnome-keyring
         - seahorse
         - libsecret
         - power-profiles-daemon
         - fastfetch
+        - nix
+        - nix-daemon
         # session manager
         - greetd
         - tuigreet
@@ -54,16 +55,6 @@ modules:
         - thunar-volman
         - thunar-archive-plugin
         - file-roller
-        # yazi stuff
-        - ripgrep
-        - 7zip
-        - jq
-        - fd-find
-        - R-rsvg
-        - ImageMagick
-        - poppler
-        - zoxide
-        - chafa
   
   - type: rpm-ostree
     repos:
@@ -71,7 +62,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/lihaohong/yazi/repo/fedora-%OS_VERSION%/lihaohong-yazi-fedora-%OS_VERSION%.repo
     install:
       - starship
-      - yazi
 
   - type: fonts
     fonts:
@@ -93,3 +83,4 @@ modules:
   - type: script
     snippets:
         - "systemctl enable greetd"
+        - "systemctl enable nix-daemon"
