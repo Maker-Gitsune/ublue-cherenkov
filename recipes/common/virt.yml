@@ -5,6 +5,7 @@
 # - https://discussion.fedoraproject.org/t/current-best-practice-for-virtual-machines-on-immutable-system-kinoite-silverblue/73423
 # - https://discussion.fedoraproject.org/t/best-way-to-install-libvirt-and-virt-manager-on-silverblue/30700
 # - https://docs.fedoraproject.org/en-US/quick-docs/virtualization-getting-started/
+# - https://discussion.fedoraproject.org/t/howto-use-virtual-machines-on-atomic-desktops-with-virt-manager/136415
 
 modules:
   - type: dnf
@@ -17,6 +18,15 @@ modules:
       - virt-manager
       - virt-viewer
 
+  - type: files
+    files:
+      # libvirtd config with socket domain owerership and permissions adjusted per:
+      # https://fedoramagazine.org/full-virtualization-system-on-fedora-workstation-30/
+      - source: system/etc/libvirtd.conf
+        destination: /etc/libvirt
+
   - type: script
     snippets:
         - "systemctl enable libvirtd"
+        - "systemctl enable virtnetworkd.service"
+        - "systemctl enable virtqemud.service"
