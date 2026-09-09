@@ -1,13 +1,14 @@
 # ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 > [!WARNING]  
-> This image is in active development; it is usable, but potentially breaking changes might still occur. **Proceed with caution.**
+> This image is in active development; it is usable, but potentially breaking changes might still occur. **Use at your own discretion.**
 
-ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM+Waybar-based desktop. It is based off of the uBlue base-main image with additions and some baseline configuration files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
+ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue base-main image with additions and some baseline configuration files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
 
-It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either). The main use-case (out-of-box) is a single-user general purpose OS for a laptop/desktop.
+It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either).
 ## Available images:
- - ```cherenkov``` - a minimal NiriWM+Waybar setup intended for general use
+ - ```cherenkov``` - a minimal NiriWM+Waybar setup intended for general desktop use
  - ```cherenkov-virt``` -  the above but with ```libvirt```/```qemu``` installed
+ - ```cherenkov-noctalia``` -  the first one but with Noctalia shell installed
 ## Notable packages/features (check [the recipes](./recipes) for more information):
  - Desktop/interface:
    - NiriWM
@@ -26,7 +27,8 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
    - wl-mirror
  - audio via pipewire
  - iwd as WiFI backend
- - file manager - Thunar (Yazi is also currently included)
+ - file manager - Thunar
+ - JetBrains Mono Nerd font
  
  ### Default apps (via Flatpak):
  - Browser (Zen)
@@ -44,7 +46,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - Calculator (GNOME calculator)
  - Clock (GNOME clocks)
  ## [Baseline Configuration files](files/system/etc)
- ublue-cherenkov ships with some baseline configuration files. All of those configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos](pictures/)):
+ ublue-cherenkov ships with some baseline configuration files. All of these configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos](pictures/)):
   - Niri - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
   - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
@@ -53,6 +55,8 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
   - swaync - some minor styling to match the others.
   - a config file to enable networkmanager to use iwd.
   - an xdg-desktop-portals config that should allow for expected/normal file chooser behavior OOTB.
+  - ```cherenkov-virt``` only:
+    - libvirtd.conf with socket user group and read/write permissions set
  ## Installation
 
 > [!WARNING]  
@@ -94,9 +98,10 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/cherenkov
   - Niri, waybar, fuzzel configurations added in release 26.08
   - Foot, swaync configuration added in release 26.08.1
   - xdg-desktop-portals config added 26.09
-- [ ] opiniated "second stage install"
+- [ ] opiniated "second stage" install
   -  system theming and associated configuration files
   -  menus/utilities
-- image variants?
-  -  [x] virtualisation support - added in release 26.09
-  -  [ ] Nvidia-specific? 
+- image variants
+  - [x] virtualization support - added in release 26.09
+  - [ ] Nvidia-specific variants? (Not unless I actually have Nvidia hardware to test with.)
+  - [ ] with Noctalia shell?

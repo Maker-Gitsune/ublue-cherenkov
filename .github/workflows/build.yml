@@ -29,6 +29,7 @@ jobs:
           # !! Add your recipes here
           - cherenkov.yml
           - cherenkov-virt.yml
+          - cherenkov-noctalia.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

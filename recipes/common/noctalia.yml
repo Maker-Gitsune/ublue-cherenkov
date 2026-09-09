@@ -9,6 +9,6 @@ modules:
 
   - type: files
     files:
-      # niri config (waybar-specific)
+      # niri config (noctalia-specific)
       - source: system/etc/niri/noctalia.kdl
         destination: /etc/niri/config.kdl
