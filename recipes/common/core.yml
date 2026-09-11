@@ -19,6 +19,8 @@ modules:
         - libsecret
         - power-profiles-daemon
         - fastfetch
+        - adw-gtk3-theme
+        - papirus-icon-theme
         # session manager
         - greetd
         - tuigreet

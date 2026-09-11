@@ -8,27 +8,30 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
 ## Available images:
  - ```cherenkov``` - a minimal NiriWM+Waybar setup intended for general desktop use
  - ```cherenkov-virt``` -  the above but with ```libvirt```/```qemu``` installed
- - ```cherenkov-noctalia``` -  the first one but with Noctalia shell installed
+ - ```cherenkov-noctalia``` -  the first one but with Noctalia shell instead of ```waybar``` and co.
+ - ```cherenkov-virtalia``` -  the previous but with ```libvirt```/```qemu``` installed
 ## Notable packages/features (check [the recipes](./recipes) for more information):
+ - Window manager - NiriWM
  - Desktop/interface:
-   - NiriWM
    - Waybar
    - Fuzzel
    - SwayNC
- - greetd+tuigreet for the display manager
- - foot (intended as a fallback)
- - supporting things:
-   - gammastep
-   - brightnessctl
    - swaybg
    - swaylock
    - swayidle
+   - or just Noctalia shell instead of the above
+ - supporting things:
+   - gammastep
+   - brightnessctl
    - kanshi
    - wl-mirror
+ - greetd+tuigreet for the display manager
+ - foot (intended as a fallback)
  - audio via pipewire
  - iwd as WiFI backend
  - file manager - Thunar
  - JetBrains Mono Nerd font
+ - ```libvirt```+```qemu``` for "virt" images
  
  ### Default apps (via Flatpak):
  - Browser (Zen)
@@ -48,6 +51,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  ## [Baseline Configuration files](files/system/etc)
  ublue-cherenkov ships with some baseline configuration files. All of these configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos](pictures/)):
   - Niri - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
+    - Images with Noctalia shell do the same, but specifically  for the Noctalia shell.
   - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
   - fuzzel - modifications to somewhat match minor styling in Niri/waybar configurations, use JetBrains Mono Nerd Font and enable per-app actions.
@@ -55,7 +59,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
   - swaync - some minor styling to match the others.
   - a config file to enable networkmanager to use iwd.
   - an xdg-desktop-portals config that should allow for expected/normal file chooser behavior OOTB.
-  - ```cherenkov-virt``` only:
+  - ```cherenkov-virt``` and ```cherenkov-virtalia``` only:
     - libvirtd.conf with socket user group and read/write permissions set
  ## Installation
 
@@ -104,4 +108,4 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/cherenkov
 - image variants
   - [x] virtualization support - added in release 26.09
   - [ ] Nvidia-specific variants? (Not unless I actually have Nvidia hardware to test with.)
-  - [ ] with Noctalia shell?
+  - [x] with Noctalia shell? - added in release 26.09 

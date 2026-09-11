@@ -14,6 +14,8 @@ configurations:
       - app.devsuite.Ptyxis
       - io.github.kolunmi.Bazaar
       - io.missioncenter.MissionCenter
+      - org.gtk.Gtk3theme.adw-gtk3
+      - org.gtk.Gtk3theme.adw-gtk3-dark
       # default-ish apps
       - io.mpv.Mpv
       - org.onlyoffice.desktopeditors
