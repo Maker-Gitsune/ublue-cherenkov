@@ -6,6 +6,11 @@ modules:
     install:
       packages:
         - noctalia
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
+        
 
   - type: files
     files:
