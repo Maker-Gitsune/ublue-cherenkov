@@ -6,7 +6,6 @@ modules:
     install:
       packages:
         - noctalia
-        - cliphist
 
   - type: files
     files:

@@ -14,17 +14,19 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - Window manager - NiriWM
  - Desktop/interface:
    - Waybar
+   - cliphist
    - Fuzzel
    - SwayNC
    - swaybg
    - swaylock
    - swayidle
-   - or just Noctalia shell instead of the above
+   - or just Noctalia shell instead of the above in Noctalia-specific images
  - supporting things:
    - gammastep
    - brightnessctl
    - kanshi
    - wl-mirror
+   - power-profiles-daemon
  - greetd+tuigreet for the display manager
  - foot (intended as a fallback)
  - audio via pipewire
@@ -51,7 +53,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  ## [Baseline Configuration files](files/system/etc)
  ublue-cherenkov ships with some baseline configuration files. All of these configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos](pictures/)):
   - Niri - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
-    - Images with Noctalia shell do the same, but specifically  for the Noctalia shell.
+    - Images with Noctalia shell do the same, but specifically for the Noctalia shell.
   - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
   - fuzzel - modifications to somewhat match minor styling in Niri/waybar configurations, use JetBrains Mono Nerd Font and enable per-app actions.
