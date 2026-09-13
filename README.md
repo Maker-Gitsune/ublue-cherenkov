@@ -2,7 +2,7 @@
 > [!WARNING]  
 > This image is in active development; it is usable, but potentially breaking changes might still occur. **Use at your own discretion.**
 
-ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue base-main image with additions and some baseline configuration files to get most of the way to a “complete” tiling WM setup not including things such as user-specific apps, brand-specific printer support and the like.
+ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue ```base-main``` image with additional packages and some baseline configuration files to get most of the way to a “complete” tiling WM/compositor setup, not including things such as user-specific apps, brand-specific printer support and the like.
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either).
 ## Available images:
@@ -103,8 +103,8 @@ cosign verify --key cosign.pub ghcr.io/maker-gitsune/cherenkov
 - [x] include default/baseline config. files
   - Niri, waybar, fuzzel configurations added in release 26.08
   - Foot, swaync configuration added in release 26.08.1
-  - xdg-desktop-portals config added 26.09
-- [ ] opiniated "second stage" install
+  - xdg-desktop-portals, Noctalia-specific NiriWM config added in 26.09
+- [ ] opiniated "second stage" install for images that use waybar?
   -  system theming and associated configuration files
   -  menus/utilities
 - image variants
