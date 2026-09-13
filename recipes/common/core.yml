@@ -39,7 +39,6 @@ modules:
         # wireless stuff
         - iwd
         - NetworkManager
-        - network-manager-applet
         - nm-connection-editor
         - nm-connection-editor-desktop
         - NetworkManager-bluetooth
