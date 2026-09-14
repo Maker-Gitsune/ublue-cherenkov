@@ -53,7 +53,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  ## [Baseline Configuration files](files/system/etc)
  All ublue-cherenkov images ship with some baseline configuration files as part of their build process. All of these configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos (waybar)](pictures/)):
   - NiriWM - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
-    - Images with Noctalia shell do the same, but specifically for the Noctalia shell.
+    - For images with Noctalia shell, the stock NiriWM configuration file has been modified per [this](https://docs.noctalia.dev/noctalia/compositor-settings/niri/) for minimum function (starting the shell, inclusion of Noctalia-specific keybinds).
   - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
   - fuzzel - modifications to somewhat match minor styling in Niri/waybar configurations, use JetBrains Mono Nerd Font and enable per-app actions.

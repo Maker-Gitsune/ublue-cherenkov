@@ -345,7 +345,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 20
     clip-to-geometry true
 }
 
@@ -389,7 +389,7 @@ binds {
     Mod+Comma hotkey-overlay-title="Toggle Noctalia Settings" { spawn-sh "noctalia msg settings-toggle"; }
     Alt+Tab hotkey-overlay-title="Toggle Noctalia window switcher" { spawn-sh  "noctalia msg window-switcher"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: Noctalia" { spawn-sh "noctalia msg session lock"; }
-    Mod+p hotkey-overlay-title="open clipboard manager: Noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    Mod+p hotkey-overlay-title="Open the clipboard manager: Noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

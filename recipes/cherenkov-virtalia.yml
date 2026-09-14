@@ -17,4 +17,5 @@ modules:
   - from-file: common/noctalia.yml
   - from-file: common/base-flatpaks.yml
   - from-file: common/virt.yml
+  - from-file: common/brew.yml
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
