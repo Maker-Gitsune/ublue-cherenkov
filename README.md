@@ -1,6 +1,6 @@
 # ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 > [!WARNING]  
-> This image is in active development; it is usable, but potentially breaking changes might still occur. **Use at your own discretion.**
+> This image is primarily intended for my own use; I have tried to make it usable OOTB via [generic configs](#baseline-configuration-files) but with any window manager-based setup, some adjustments will likely be needed from the end-user for best fit.
 
 ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue ```base-main``` image with additional packages and some baseline configuration files to get most of the way to a “complete” tiling WM/compositor setup, not including things such as user-specific apps, brand-specific printer support and the like.
 
@@ -51,8 +51,8 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - Calculator (GNOME calculator)
  - Clock (GNOME clocks)
  ## [Baseline Configuration files](files/system/etc)
- ublue-cherenkov ships with some baseline configuration files. All of these configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos](pictures/)):
-  - Niri - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
+ All ublue-cherenkov images ship with some baseline configuration files as part of their build process. All of these configuration files have been modified from their defaults mostly to achieve minimum viable function/integration with the included packages ([example photos (waybar)](pictures/)):
+  - NiriWM - the default config.kdl has been modified to start SwayNC/SwayOSD/xfce-polkit etc. and has keybinds for cliphist and SwayOSD along with some minor styling.
     - Images with Noctalia shell do the same, but specifically for the Noctalia shell.
   - waybar - the default SwayWM workspace/window modules have been replaced with their Niri equivalents, font set to use the installed JetBrains Mono Nerd font and to have a module for SwayNC. It also has some minor styling and a minimal module selection including a custom module for wlogout.
   - greetd - the included configuration file offers a baseline setup for tuigreet and should ensure proper system function without user intervention (manual configuration is normally needed to set it up).
