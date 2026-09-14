@@ -43,7 +43,6 @@ modules:
         - nm-connection-editor-desktop
         - NetworkManager-bluetooth
         - bluez
-        - blueman
         # file manager stuff
         - tumbler
         - gvfs-mtp

@@ -15,6 +15,7 @@ modules:
       - cliphist
       - xfce-polkit
       - network-manager-applet
+      - blueman
         
   - type: rpm-ostree
     repos:
