@@ -1,15 +1,15 @@
 # ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
-> [!WARNING]  
-> While this image is primarily intended for my own use, I have tried to make it usable OOTB via [generic configs](#baseline-configuration-files) but with any window manager-based setup, some adjustments will likely be needed from the end-user for best fit.
+> [!NOTE]  
+> While these images were originally intended for my own use, I've tried to make them usable OOTB via [generic configs](#baseline-configuration-files) but with any window manager-based setup, **some adjustments will likely be needed for best fit.**
 
-ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue ```base-main``` image with additional packages and some baseline configuration files to get most of the way to a “complete” tiling WM/compositor setup, not including things such as user-specific apps, brand-specific printer support and the like.
+ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue `base-main` image with additional packages and some baseline configuration files to get most of the way to a “complete” tiling WM/compositor setup, not including things such as user-specific apps, brand-specific printer support and the like.
 
 It exists because layering/swapping that many packages on the uBlue Sericea image would make updating longer/more complex (also because that specific image [is no longer a thing](https://github.com/ublue-os/main/issues/927) so it could not have been used as a base either).
 ## Available images:
- - ```cherenkov``` - a minimal NiriWM+Waybar setup intended for general desktop use
- - ```cherenkov-virt``` -  the above but with ```libvirt```/```qemu``` installed
- - ```cherenkov-noctalia``` -  the first one but with Noctalia shell instead of ```waybar``` and co.
- - ```cherenkov-virtalia``` -  the previous but with ```libvirt```/```qemu``` installed
+ - `cherenkov` - a minimal NiriWM+Waybar setup intended for general desktop use
+ - `cherenkov-virt` -  the above but with `libvirt`/`qemu` installed
+ - `cherenkov-noctalia` -  the first one but with Noctalia shell instead of `waybar` and co.
+ - `cherenkov-virtalia` -  the previous but with `libvirt`/`qemu` installed
 ## Notable packages/features (check [the recipes](./recipes) for more information):
  - Window manager - NiriWM
  - Desktop/interface:
@@ -34,7 +34,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - file manager - Thunar
  - JetBrains Mono Nerd font
  - brew package manager
- - ```libvirt```+```qemu``` for "virt" images
+ - `libvirt`+`qemu` for "virt" images
  
  ### Default apps (via Flatpak):
  - Browser (Zen)
@@ -62,7 +62,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
   - swaync - some minor styling to match the others.
   - a config file to enable networkmanager to use iwd.
   - an xdg-desktop-portals config that should allow for expected/normal file chooser behavior OOTB.
-  - ```cherenkov-virt``` and ```cherenkov-virtalia``` only:
+  - `cherenkov-virt` and `cherenkov-virtalia` only:
     - libvirtd.conf with socket user group and read/write permissions set
  ## Installation
 
@@ -72,8 +72,8 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
 To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  - The image comes with its own selection of Flatpaks, so a ```flatpak uninstall --all``` is recommended if you are rebasing a brand-new install to specifically use ublue-cherenkov.
-  - Just replace ```cherenkov:latest``` with ```cherenkov-virt:latest``` or any other variant that might be added.
+  - The image comes with its own selection of Flatpaks, so a `flatpak uninstall --all` is recommended if you are rebasing a brand-new install to specifically use ublue-cherenkov.
+  - Just replace `cherenkov:latest` with `cherenkov-virt:latest` or any other variant that might be added.
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/maker-gitsune/cherenkov:latest
   ```
@@ -99,7 +99,7 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/maker-gitsune/cherenkov
 ```
-- To verify a cherenkov variant, just replace ```cherenkov:latest``` with ```cherenkov-virt:latest``` or the name of any other variant that might be added.
+- To verify a cherenkov variant, just replace `cherenkov:latest` with `cherenkov-virt:latest` or the name of any other variant that might be added.
 ## todo:
 - [x] include default/baseline config. files
   - Niri, waybar, fuzzel configurations added in release 26.08
