@@ -1,6 +1,6 @@
 # ublue-cherenkov &nbsp; [![bluebuild build badge](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml/badge.svg)](https://github.com/maker-gitsune/ublue-cherenkov/actions/workflows/build.yml)
 > [!WARNING]  
-> This image is primarily intended for my own use; I have tried to make it usable OOTB via [generic configs](#baseline-configuration-files) but with any window manager-based setup, some adjustments will likely be needed from the end-user for best fit.
+> While this image is primarily intended for my own use, I have tried to make it usable OOTB via [generic configs](#baseline-configuration-files) but with any window manager-based setup, some adjustments will likely be needed from the end-user for best fit.
 
 ublue-cherenkov is a family of customized Universal Blue images featuring a minimal NiriWM-based desktop. It is based off of the uBlue ```base-main``` image with additional packages and some baseline configuration files to get most of the way to a “complete” tiling WM/compositor setup, not including things such as user-specific apps, brand-specific printer support and the like.
 
@@ -33,6 +33,7 @@ It exists because layering/swapping that many packages on the uBlue Sericea imag
  - iwd as WiFI backend
  - file manager - Thunar
  - JetBrains Mono Nerd font
+ - brew package manager
  - ```libvirt```+```qemu``` for "virt" images
  
  ### Default apps (via Flatpak):
