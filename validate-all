@@ -1,0 +1,29 @@
+# sources:
+# https://github.com/dylanaraps/pure-bash-bible#loop-over-an-array
+# https://www.baeldung.com/linux/reading-output-into-array
+# https://github.com/Thomas-George-T/HackerRank-The-Linux-Shell-Challenges-Solutions/blob/master/Challenges/Arrays%20in%20Bash/Count%20the%20number%20of%20elements%20in%20an%20Array.sh
+
+# check recipes
+recipes=( $(ls recipes | grep .yml) )
+num_rec=( $(echo ${#recipes[@]}) )
+echo "--------------------------------------------------------"
+echo "$num_rec bluebuild recipes found, validating..."
+echo ""
+for element in "${recipes[@]}"; do
+    bluebuild validate -a recipes/"$element"
+done
+echo ""
+echo "bluebuild recipe validation complete!"
+echo "--------------------------------------------------------"
+
+#check niri configs
+configs=( $(ls files/system/etc/niri | grep .kdl) )
+num_conf=( $(echo ${#configs[@]}) )
+echo "$num_conf NiriWM config. files found, validating..."
+echo ""
+for element in "${configs[@]}"; do
+    niri validate -c files/system/etc/niri/"$element"
+done
+echo ""
+echo "NiriWM config. validation complete!"
+echo "--------------------------------------------------------"

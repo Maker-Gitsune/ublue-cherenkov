@@ -1,0 +1,19 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+modules:
+  - type: dnf
+    install:
+      packages:
+        - noctalia
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
+        
+
+  - type: files
+    files:
+      # niri config (noctalia-specific)
+      - source: system/etc/niri/noctalia.kdl
+        destination: /etc/niri/config.kdl

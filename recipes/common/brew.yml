@@ -1,0 +1,6 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v2.json
+
+type: brew
+nofile-limits: false # increase nofile limits
+brew-analytics: false # disable telemetry
